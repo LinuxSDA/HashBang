@@ -10,9 +10,13 @@ let shells = {
         \   }  
 
 let extention = expand("%:e")
-let fileshell = shells[extention]
-let line =  "#! /usr/bin/env " . fileshell 
-0put = line
+
+if has_key(shells,extention)
+  let fileshell = shells[extention]
+  let line =  "#! /usr/bin/env " . fileshell 
+  0put = line
+endif
+
 endfunction
 
 :autocmd BufNewFile *.* :call Hashbang()
