@@ -1,0 +1,7 @@
+function! Hashbang()
+let name = &filetype
+let line =  "#! /usr/bin/env " . name
+0put = line
+endfunction
+
+:autocmd BufNewFile *.* :call Hashbang()
