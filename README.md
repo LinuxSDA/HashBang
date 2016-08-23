@@ -17,7 +17,7 @@ or **you can manually paste the content in your .vimrc file**. If $HOME doesn't 
 
 You can change parameters in last line:    
 
-`:autocmd BufNewFile *.* :call Hashbang(0,1)`
+`:autocmd BufNewFile *.* :call Hashbang(1,1)`
 
 **Hashbang(0,0):**
 
