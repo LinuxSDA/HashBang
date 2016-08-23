@@ -1,8 +1,6 @@
 # HashBang
 Vim Plugin (maybe?) to add shebang lines to your programming files.
 
-## Script under progress. Do not use.
-
 
 This vimscript adds `#! interpreter` lines to your new files automatically, based on file extension, and also makes them executable when you quit.
 
