@@ -4,7 +4,7 @@ Vim Plugin (maybe?) to add shebang lines to your programming files.
 ## Script under progress. Do not use.
 
 
-This vimscript adds `#! interpreter` lines to your file automatically, based on file extension, and also makes them executable when you quit.
+This vimscript adds `#! interpreter` lines to your new files automatically, based on file extension, and also makes them executable when you quit.
 
 To use it you can download the file and do:
 
@@ -21,12 +21,12 @@ You can change parameters in last line:
 
 **Hashbang(0,0):**
 
-- put sytem interpreter location (`#! /usr/bin/python`).  
+- put system interpreter location (`#! /usr/bin/python`).  
 - doesn't change file permissions.
 
 **Hashbang(0,1):** 
 
-- put sytem interpreter location (`#! /usr/bin/python`). 
+- put system interpreter location (`#! /usr/bin/python`). 
 - Change file permissions (`chmod u+x filename`).
 
 **Hashbang(1,0):**
