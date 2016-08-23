@@ -1,25 +1,37 @@
-function! Hashbang()
-let shells = {
-        \     'awk': "awk",
-        \      'sh': "bash",
-        \      'js': "node",
-        \       'm': "octave",
-        \      'pl': "perl",
-        \     'php': "php",
-        \      'py': "python",
-        \      'rb': "ruby",
-        \     'tcl': "tclsh",
-        \      'tk': "wish"
-        \   }
+function! Hashbang(portable, permission)
+let shells = { 
+				\			'awk': "awk",
+				\			 'sh': "bash",
+				\			 'js': "node",
+				\			  'm': "octave",
+				\			 'pl': "perl", 
+				\			'php': "php",
+				\		 	 'py': "python",
+				\			 'rb': "ruby",
+				\			'tcl': "tclsh",
+				\			 'tk': "wish"
+				\		}
 
 let extention = expand("%:e")
 
 if has_key(shells,extention)
-  let fileshell = shells[extention]
-  let line =  "#! /usr/bin/env " . fileshell 
-  0put = line
+	let fileshell = shells[extention]
+	
+	if a:portable
+		let line =  "#! /usr/bin/env " . fileshell 
+	else 
+		let line = "#! " . system("which " . fileshell)
+	endif
+
+	0put = line
+
+	if a:permission
+		:autocmd BufWritePost * :autocmd VimLeave * :!chmod u+x %
+	endif
+
 endif
 
 endfunction
 
-:autocmd BufNewFile *.* :call Hashbang()
+:autocmd BufNewFile *.* :call Hashbang(0,1)
+
