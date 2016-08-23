@@ -1,13 +1,16 @@
 function! Hashbang()
-let shells = {  
-        \     'sh': "bash",
+let shells = {
+        \     'awk': "awk",
+        \      'sh': "bash",
+        \      'js': "node",
+        \       'm': "octave",
+        \      'pl': "perl",
+        \     'php': "php",
+        \      'py': "python",
+        \      'rb': "ruby",
         \     'tcl': "tclsh",
-        \     'tk': "wish",
-        \     'py': "python",
-        \     'js': "node",
-        \     'rb': "ruby",
-        \     'pl': "perl" 
-        \   }  
+        \      'tk': "wish"
+        \   }
 
 let extention = expand("%:e")
 
