@@ -1,21 +1,27 @@
 function! Hashbang(portable, permission)
 let shells = { 
-				\			'awk': "awk",
-				\			 'sh': "bash",
-				\			 'js': "node",
-				\			  'm': "octave",
-				\			 'pl': "perl", 
-				\			'php': "php",
-				\		 	 'py': "python",
-				\			 'rb': "ruby",
-				\			'tcl': "tclsh",
-				\			 'tk': "wish"
-				\		}
+        \    'awk': "awk",
+        \     'sh': "bash",
+        \     'hs': "runhaskell",
+        \     'jl': "julia",
+        \    'lua': "lua",
+        \    'mak': "make",
+        \     'js': "node",
+        \      'm': "octave",
+        \     'pl': "perl", 
+        \    'php': "php",
+        \     'py': "python",
+        \      'r': "Rscript",
+        \     'rb': "ruby",
+        \  'scala': "scala",
+        \    'tcl': "tclsh",
+        \    ' tk': "wish"
+        \    }
 
-let extention = expand("%:e")
+let extension = expand("%:e")
 
-if has_key(shells,extention)
-	let fileshell = shells[extention]
+if has_key(shells,extension)
+	let fileshell = shells[extension]
 	
 	if a:portable
 		let line =  "#! /usr/bin/env " . fileshell 
@@ -34,4 +40,3 @@ endif
 endfunction
 
 :autocmd BufNewFile *.* :call Hashbang(0,1)
-
