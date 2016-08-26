@@ -1,10 +1,8 @@
 # HashBang
-Vim Plugin (maybe?) to add shebang lines to your programming files.
 
+###This vimscript adds `#! interpreter` lines to your new files automatically, based on file extension (removable), and also makes them executable when you quit.
 
-This vimscript adds `#! interpreter` lines to your new files automatically, based on file extension, and also makes them executable when you quit.
-
-__
+----
 
 To use it, you can download the file and do:
 
@@ -17,24 +15,22 @@ or **you can manually paste the content in your .vimrc file**. If $HOME doesn't 
 
 You can change parameters in last line:    
 
-`:autocmd BufNewFile *.* :call Hashbang(1,1)`
+`:autocmd BufNewFile *.* :call Hashbang(1,1,0)`
 
-**Hashbang(0,0):**
+**1st Parameter** :
 
-- put system interpreter location (`#! /usr/bin/python`).  
-- doesn't change file permissions.
+`0` : use system interpreter location (`#! /usr/bin/python`).
 
-**Hashbang(0,1):** 
+`1` : use environment variable location (`#! /usr/bin/env python`).
 
-- put system interpreter location (`#! /usr/bin/python`). 
-- Change file permissions (`chmod u+x filename`).
+**2nd Parameter** :
 
-**Hashbang(1,0):**
+`0` : Do not change file permissions.
 
-- use environment variable location (`#! /usr/bin/env python`). 
-- doesn't change file permissions.
+`1` : Change file permissions.  (`chmod u+x filename`).
 
-**Hashbang(1,1):**
+**3rd Parameter** :
 
-- use environment variable location (`#! /usr/bin/env python`). 
-- Change file permissions (`chmod u+x filename`).
+`0` : Do not remove extension.
+
+`1` : Remove extension.
