@@ -1,6 +1,6 @@
 # HashBang
 
-###This vimscript adds `#! interpreter` lines to your new files automatically, based on file extension (removable), and also makes them executable when you quit.
+### This vimscript adds `#! interpreter` lines to your new files automatically, based on file extension (removable), and also makes them executable when you quit.
 
 ----
 
